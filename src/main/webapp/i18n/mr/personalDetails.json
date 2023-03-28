@@ -1,0 +1,34 @@
+{
+  "vghrmsApp": {
+    "personalDetails": {
+      "home": {
+        "title": "Personal Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Personal Details तयार करा",
+        "createOrEditLabel": "Personal Details तयार किंवा संपादित करा",
+        "notFound": "No Personal Details found"
+      },
+      "created": "Personal Details [identifier: {{ param }}] तयार आहे",
+      "updated": "Personal Details [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Personal Details [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Personal Details [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Personal Details"
+      },
+      "id": "ID",
+      "telephoneNo": "Telephone No",
+      "nationality": "Nationality",
+      "maritalStatus": "Marital Status",
+      "religion": "Religion",
+      "employeeId": "Employee Id",
+      "bloodGroup": "Blood Group",
+      "dateOfBirth": "Date Of Birth",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

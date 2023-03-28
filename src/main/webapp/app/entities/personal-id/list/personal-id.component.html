@@ -1,0 +1,178 @@
+<div>
+  <h2 id="page-heading" data-cy="PersonalIdHeading">
+    <span jhiTranslate="vghrmsApp.personalId.home.title">Personal Ids</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="vghrmsApp.personalId.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-personal-id"
+        [routerLink]="['/personal-id/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="vghrmsApp.personalId.home.createLabel"> Create a new Personal Id </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="personalIds?.length === 0">
+    <span jhiTranslate="vghrmsApp.personalId.home.notFound">No Personal Ids found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="personalIds && personalIds.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.type">Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="number">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.number">Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="issueDate">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.issueDate">Issue Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="expDate">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.expDate">Exp Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="issuingAuthority">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.issuingAuthority">Issuing Authority</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="docUrl">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.docUrl">Doc Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="employeeId">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.employeeId">Employee Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="companyId">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.companyId">Company Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModified">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.lastModified">Last Modified</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lastModifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="vghrmsApp.personalId.lastModifiedBy">Last Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let personalId of personalIds; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/personal-id', personalId.id, 'view']">{{ personalId.id }}</a>
+          </td>
+          <td>{{ personalId.type }}</td>
+          <td>{{ personalId.number }}</td>
+          <td>{{ personalId.issueDate | formatMediumDatetime }}</td>
+          <td>{{ personalId.expDate | formatMediumDatetime }}</td>
+          <td>{{ personalId.issuingAuthority }}</td>
+          <td>{{ personalId.docUrl }}</td>
+          <td>{{ personalId.employeeId }}</td>
+          <td>{{ personalId.status }}</td>
+          <td>{{ personalId.companyId }}</td>
+          <td>{{ personalId.lastModified | formatMediumDatetime }}</td>
+          <td>{{ personalId.lastModifiedBy }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/personal-id', personalId.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/personal-id', personalId.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(personalId)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="personalIds && personalIds.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

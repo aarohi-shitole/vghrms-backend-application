@@ -1,0 +1,30 @@
+{
+  "vghrmsApp": {
+    "reporting": {
+      "home": {
+        "title": "Reportings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Reporting तयार करा",
+        "createOrEditLabel": "Reporting तयार किंवा संपादित करा",
+        "notFound": "No Reportings found"
+      },
+      "created": "Reporting [identifier: {{ param }}] तयार आहे",
+      "updated": "Reporting [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Reporting [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Reporting [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Reporting"
+      },
+      "id": "ID",
+      "employeeId": "Employee Id",
+      "reportingEmpId": "Reporting Emp Id",
+      "reportingId": "Reporting Id",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

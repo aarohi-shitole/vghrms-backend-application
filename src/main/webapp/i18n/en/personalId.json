@@ -1,0 +1,34 @@
+{
+  "vghrmsApp": {
+    "personalId": {
+      "home": {
+        "title": "Personal Ids",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Personal Id",
+        "createOrEditLabel": "Create or edit a Personal Id",
+        "notFound": "No Personal Ids found"
+      },
+      "created": "A new Personal Id is created with identifier {{ param }}",
+      "updated": "A Personal Id is updated with identifier {{ param }}",
+      "deleted": "A Personal Id is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Personal Id {{ id }}?"
+      },
+      "detail": {
+        "title": "Personal Id"
+      },
+      "id": "ID",
+      "type": "Type",
+      "number": "Number",
+      "issueDate": "Issue Date",
+      "expDate": "Exp Date",
+      "issuingAuthority": "Issuing Authority",
+      "docUrl": "Doc Url",
+      "employeeId": "Employee Id",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

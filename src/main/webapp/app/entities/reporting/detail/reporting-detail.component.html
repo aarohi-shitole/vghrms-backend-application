@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reporting">
+      <h2 data-cy="reportingDetailsHeading"><span jhiTranslate="vghrmsApp.reporting.detail.title">Reporting</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reporting.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.employeeId">Employee Id</span></dt>
+        <dd>
+          <span>{{ reporting.employeeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.reportingEmpId">Reporting Emp Id</span></dt>
+        <dd>
+          <span>{{ reporting.reportingEmpId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.reportingId">Reporting Id</span></dt>
+        <dd>
+          <span>{{ reporting.reportingId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.status">Status</span></dt>
+        <dd>
+          <span>{{ reporting.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ reporting.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ reporting.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.reporting.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ reporting.lastModifiedBy }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reporting', reporting.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

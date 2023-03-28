@@ -1,0 +1,38 @@
+{
+  "vghrmsApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Employee तयार करा",
+        "createOrEditLabel": "Employee तयार किंवा संपादित करा",
+        "notFound": "No Employees found"
+      },
+      "created": "Employee [identifier: {{ param }}] तयार आहे",
+      "updated": "Employee [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Employee [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Employee [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "gender": "Gender",
+      "empUniqueId": "Emp Unique Id",
+      "joindate": "Joindate",
+      "status": "Status",
+      "employmentTypeId": "Employment Type Id",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By",
+      "designation": "Designation",
+      "department": "Department",
+      "branch": "Branch",
+      "region": "Region"
+    }
+  }
+}

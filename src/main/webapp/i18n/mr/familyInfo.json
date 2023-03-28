@@ -1,0 +1,34 @@
+{
+  "vghrmsApp": {
+    "familyInfo": {
+      "home": {
+        "title": "Family Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Family Info तयार करा",
+        "createOrEditLabel": "Family Info तयार किंवा संपादित करा",
+        "notFound": "No Family Infos found"
+      },
+      "created": "Family Info [identifier: {{ param }}] तयार आहे",
+      "updated": "Family Info [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Family Info [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Family Info [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Family Info"
+      },
+      "id": "ID",
+      "name": "Name",
+      "dateOfBirth": "Date Of Birth",
+      "relation": "Relation",
+      "addressId": "Address Id",
+      "isEmployed": "Is Employed",
+      "employedAt": "Employed At",
+      "employeeId": "Employee Id",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

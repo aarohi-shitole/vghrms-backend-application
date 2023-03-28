@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personalDetails">
+      <h2 data-cy="personalDetailsDetailsHeading"><span jhiTranslate="vghrmsApp.personalDetails.detail.title">Personal Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personalDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.telephoneNo">Telephone No</span></dt>
+        <dd>
+          <span>{{ personalDetails.telephoneNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.nationality">Nationality</span></dt>
+        <dd>
+          <span>{{ personalDetails.nationality }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.maritalStatus">Marital Status</span></dt>
+        <dd>
+          <span>{{ personalDetails.maritalStatus }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.religion">Religion</span></dt>
+        <dd>
+          <span>{{ personalDetails.religion }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.employeeId">Employee Id</span></dt>
+        <dd>
+          <span>{{ personalDetails.employeeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.bloodGroup">Blood Group</span></dt>
+        <dd>
+          <span>{{ personalDetails.bloodGroup }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ personalDetails.dateOfBirth | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.status">Status</span></dt>
+        <dd>
+          <span>{{ personalDetails.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ personalDetails.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ personalDetails.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalDetails.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ personalDetails.lastModifiedBy }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personal-details', personalDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
