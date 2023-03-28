@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personalId">
+      <h2 data-cy="personalIdDetailsHeading"><span jhiTranslate="vghrmsApp.personalId.detail.title">Personal Id</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personalId.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.type">Type</span></dt>
+        <dd>
+          <span>{{ personalId.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.number">Number</span></dt>
+        <dd>
+          <span>{{ personalId.number }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.issueDate">Issue Date</span></dt>
+        <dd>
+          <span>{{ personalId.issueDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.expDate">Exp Date</span></dt>
+        <dd>
+          <span>{{ personalId.expDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.issuingAuthority">Issuing Authority</span></dt>
+        <dd>
+          <span>{{ personalId.issuingAuthority }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.docUrl">Doc Url</span></dt>
+        <dd>
+          <span>{{ personalId.docUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.employeeId">Employee Id</span></dt>
+        <dd>
+          <span>{{ personalId.employeeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.status">Status</span></dt>
+        <dd>
+          <span>{{ personalId.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ personalId.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ personalId.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.personalId.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ personalId.lastModifiedBy }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personal-id', personalId.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

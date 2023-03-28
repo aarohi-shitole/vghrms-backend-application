@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="address">
+      <h2 data-cy="addressDetailsHeading"><span jhiTranslate="vghrmsApp.address.detail.title">Address</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ address.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.type">Type</span></dt>
+        <dd>
+          <span>{{ address.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.line1">Line 1</span></dt>
+        <dd>
+          <span>{{ address.line1 }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.line2">Line 2</span></dt>
+        <dd>
+          <span>{{ address.line2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.country">Country</span></dt>
+        <dd>
+          <span>{{ address.country }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.state">State</span></dt>
+        <dd>
+          <span>{{ address.state }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.city">City</span></dt>
+        <dd>
+          <span>{{ address.city }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.pincode">Pincode</span></dt>
+        <dd>
+          <span>{{ address.pincode }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.defaultAdd">Default Add</span></dt>
+        <dd>
+          <span>{{ address.defaultAdd }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.landMark">Land Mark</span></dt>
+        <dd>
+          <span>{{ address.landMark }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.longitude">Longitude</span></dt>
+        <dd>
+          <span>{{ address.longitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.latitude">Latitude</span></dt>
+        <dd>
+          <span>{{ address.latitude }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.refTable">Ref Table</span></dt>
+        <dd>
+          <span>{{ address.refTable }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.refTableId">Ref Table Id</span></dt>
+        <dd>
+          <span>{{ address.refTableId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.status">Status</span></dt>
+        <dd>
+          <span>{{ address.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ address.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ address.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.address.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ address.lastModifiedBy }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/address', address.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

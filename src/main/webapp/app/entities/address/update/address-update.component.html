@@ -1,0 +1,150 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-address-heading" data-cy="AddressCreateUpdateHeading" jhiTranslate="vghrmsApp.address.home.createOrEditLabel">
+        Create or edit a Address
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.type" for="field_type">Type</label>
+          <input type="text" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.line1" for="field_line1">Line 1</label>
+          <input type="text" class="form-control" name="line1" id="field_line1" data-cy="line1" formControlName="line1" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.line2" for="field_line2">Line 2</label>
+          <input type="text" class="form-control" name="line2" id="field_line2" data-cy="line2" formControlName="line2" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.country" for="field_country">Country</label>
+          <input type="text" class="form-control" name="country" id="field_country" data-cy="country" formControlName="country" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.state" for="field_state">State</label>
+          <input type="text" class="form-control" name="state" id="field_state" data-cy="state" formControlName="state" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.city" for="field_city">City</label>
+          <input type="text" class="form-control" name="city" id="field_city" data-cy="city" formControlName="city" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.pincode" for="field_pincode">Pincode</label>
+          <input type="text" class="form-control" name="pincode" id="field_pincode" data-cy="pincode" formControlName="pincode" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.defaultAdd" for="field_defaultAdd">Default Add</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="defaultAdd"
+            id="field_defaultAdd"
+            data-cy="defaultAdd"
+            formControlName="defaultAdd"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.landMark" for="field_landMark">Land Mark</label>
+          <input type="text" class="form-control" name="landMark" id="field_landMark" data-cy="landMark" formControlName="landMark" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.longitude" for="field_longitude">Longitude</label>
+          <input type="number" class="form-control" name="longitude" id="field_longitude" data-cy="longitude" formControlName="longitude" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.latitude" for="field_latitude">Latitude</label>
+          <input type="number" class="form-control" name="latitude" id="field_latitude" data-cy="latitude" formControlName="latitude" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.refTable" for="field_refTable">Ref Table</label>
+          <input type="text" class="form-control" name="refTable" id="field_refTable" data-cy="refTable" formControlName="refTable" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.refTableId" for="field_refTableId">Ref Table Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="refTableId"
+            id="field_refTableId"
+            data-cy="refTableId"
+            formControlName="refTableId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.companyId" for="field_companyId">Company Id</label>
+          <input type="number" class="form-control" name="companyId" id="field_companyId" data-cy="companyId" formControlName="companyId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.lastModified" for="field_lastModified">Last Modified</label>
+          <div class="d-flex">
+            <input
+              id="field_lastModified"
+              data-cy="lastModified"
+              type="datetime-local"
+              class="form-control"
+              name="lastModified"
+              formControlName="lastModified"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.address.lastModifiedBy" for="field_lastModifiedBy">Last Modified By</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastModifiedBy"
+            id="field_lastModifiedBy"
+            data-cy="lastModifiedBy"
+            formControlName="lastModifiedBy"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

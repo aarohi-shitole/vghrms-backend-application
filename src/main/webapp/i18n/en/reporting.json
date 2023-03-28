@@ -1,0 +1,30 @@
+{
+  "vghrmsApp": {
+    "reporting": {
+      "home": {
+        "title": "Reportings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reporting",
+        "createOrEditLabel": "Create or edit a Reporting",
+        "notFound": "No Reportings found"
+      },
+      "created": "A new Reporting is created with identifier {{ param }}",
+      "updated": "A Reporting is updated with identifier {{ param }}",
+      "deleted": "A Reporting is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reporting {{ id }}?"
+      },
+      "detail": {
+        "title": "Reporting"
+      },
+      "id": "ID",
+      "employeeId": "Employee Id",
+      "reportingEmpId": "Reporting Emp Id",
+      "reportingId": "Reporting Id",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

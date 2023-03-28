@@ -1,0 +1,40 @@
+{
+  "vghrmsApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Address तयार करा",
+        "createOrEditLabel": "Address तयार किंवा संपादित करा",
+        "notFound": "No Addresses found"
+      },
+      "created": "Address [identifier: {{ param }}] तयार आहे",
+      "updated": "Address [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Address [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Address [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "id": "ID",
+      "type": "Type",
+      "line1": "Line 1",
+      "line2": "Line 2",
+      "country": "Country",
+      "state": "State",
+      "city": "City",
+      "pincode": "Pincode",
+      "defaultAdd": "Default Add",
+      "landMark": "Land Mark",
+      "longitude": "Longitude",
+      "latitude": "Latitude",
+      "refTable": "Ref Table",
+      "refTableId": "Ref Table Id",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "vghrmsApp": {
+    "masterLookup": {
+      "home": {
+        "title": "Master Lookups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Master Lookup तयार करा",
+        "createOrEditLabel": "Master Lookup तयार किंवा संपादित करा",
+        "notFound": "No Master Lookups found"
+      },
+      "created": "Master Lookup [identifier: {{ param }}] तयार आहे",
+      "updated": "Master Lookup [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Master Lookup [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Master Lookup [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Master Lookup"
+      },
+      "id": "ID",
+      "name": "Name",
+      "value": "Value",
+      "valueTwo": "Value Two",
+      "description": "Description",
+      "type": "Type",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

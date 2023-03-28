@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employee">
+      <h2 data-cy="employeeDetailsHeading"><span jhiTranslate="vghrmsApp.employee.detail.title">Employee</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ employee.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ employee.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.middleName">Middle Name</span></dt>
+        <dd>
+          <span>{{ employee.middleName }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ employee.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.gender">Gender</span></dt>
+        <dd>
+          <span>{{ employee.gender }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.empUniqueId">Emp Unique Id</span></dt>
+        <dd>
+          <span>{{ employee.empUniqueId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.joindate">Joindate</span></dt>
+        <dd>
+          <span>{{ employee.joindate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.status">Status</span></dt>
+        <dd>
+          <span>{{ employee.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.employmentTypeId">Employment Type Id</span></dt>
+        <dd>
+          <span>{{ employee.employmentTypeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.companyId">Company Id</span></dt>
+        <dd>
+          <span>{{ employee.companyId }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.lastModified">Last Modified</span></dt>
+        <dd>
+          <span>{{ employee.lastModified | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ employee.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.designation">Designation</span></dt>
+        <dd>
+          <div *ngIf="employee.designation">
+            <a [routerLink]="['/designation', employee.designation.id, 'view']">{{ employee.designation.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.department">Department</span></dt>
+        <dd>
+          <div *ngIf="employee.department">
+            <a [routerLink]="['/department', employee.department.id, 'view']">{{ employee.department.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.branch">Branch</span></dt>
+        <dd>
+          <div *ngIf="employee.branch">
+            <a [routerLink]="['/branch', employee.branch.id, 'view']">{{ employee.branch.branchName }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="vghrmsApp.employee.region">Region</span></dt>
+        <dd>
+          <div *ngIf="employee.region">
+            <a [routerLink]="['/region', employee.region.id, 'view']">{{ employee.region.regionName }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/employee', employee.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

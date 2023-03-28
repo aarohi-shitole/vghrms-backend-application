@@ -1,0 +1,31 @@
+{
+  "vghrmsApp": {
+    "formValidator": {
+      "home": {
+        "title": "Form Validators",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Form Validator तयार करा",
+        "createOrEditLabel": "Form Validator तयार किंवा संपादित करा",
+        "notFound": "No Form Validators found"
+      },
+      "created": "Form Validator [identifier: {{ param }}] तयार आहे",
+      "updated": "Form Validator [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Form Validator [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Form Validator [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Form Validator"
+      },
+      "id": "ID",
+      "type": "Type",
+      "value": "Value",
+      "formName": "Form Name",
+      "fieldName": "Field Name",
+      "status": "Status",
+      "companyId": "Company Id",
+      "lastModified": "Last Modified",
+      "lastModifiedBy": "Last Modified By"
+    }
+  }
+}

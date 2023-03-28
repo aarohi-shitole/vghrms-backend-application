@@ -1,0 +1,107 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-reporting-heading" data-cy="ReportingCreateUpdateHeading" jhiTranslate="vghrmsApp.reporting.home.createOrEditLabel">
+        Create or edit a Reporting
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.employeeId" for="field_employeeId">Employee Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="employeeId"
+            id="field_employeeId"
+            data-cy="employeeId"
+            formControlName="employeeId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.reportingEmpId" for="field_reportingEmpId">Reporting Emp Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="reportingEmpId"
+            id="field_reportingEmpId"
+            data-cy="reportingEmpId"
+            formControlName="reportingEmpId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.reportingId" for="field_reportingId">Reporting Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="reportingId"
+            id="field_reportingId"
+            data-cy="reportingId"
+            formControlName="reportingId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.status" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.companyId" for="field_companyId">Company Id</label>
+          <input type="number" class="form-control" name="companyId" id="field_companyId" data-cy="companyId" formControlName="companyId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.lastModified" for="field_lastModified">Last Modified</label>
+          <div class="d-flex">
+            <input
+              id="field_lastModified"
+              data-cy="lastModified"
+              type="datetime-local"
+              class="form-control"
+              name="lastModified"
+              formControlName="lastModified"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="vghrmsApp.reporting.lastModifiedBy" for="field_lastModifiedBy">Last Modified By</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastModifiedBy"
+            id="field_lastModifiedBy"
+            data-cy="lastModifiedBy"
+            formControlName="lastModifiedBy"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
